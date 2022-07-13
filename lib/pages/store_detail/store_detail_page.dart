@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:foodie_app_ui/data/product_json.dart';
+import 'package:foodie_app_ui/pages/store_detail/components/custom_app_bar.dart';
 import 'package:foodie_app_ui/theme/colors.dart';
 import 'package:foodie_app_ui/theme/padding.dart';
 
@@ -24,111 +24,14 @@ class _StoreDetailPageState extends State<StoreDetailPage> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(200),
-        child: getAppBar(),
+        child: CustomAppBar(image: widget.image, name: widget.name),
       ),
       body: getBody(),
       bottomNavigationBar: getFooter(),
     );
   }
 
-  Widget getAppBar() {
-    return AppBar(
-      automaticallyImplyLeading: false,
-      backgroundColor: primary,
-      leading: IconButton(
-        icon: SvgPicture.asset(
-          'assets/icons/arrow_back_icon.svg',
-          color: textWhite,
-        ),
-        onPressed: () => Navigator.pop(context),
-      ),
-      actions: [
-        IconButton(
-          icon: Icon(Icons.info),
-          onPressed: () => Navigator.pop(context),
-        ),
-      ],
-      flexibleSpace: Stack(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: NetworkImage(widget.image),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-          Container(
-            decoration: BoxDecoration(
-              color: textBlack.withOpacity(0.5),
-            ),
-            child: SafeArea(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Center(
-                    child: Text(
-                      widget.name,
-                      style: TextStyle(
-                        color: textWhite,
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 15),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 2, color: textWhite),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                        right: 12,
-                        left: 12,
-                        bottom: 8,
-                        top: 8,
-                      ),
-                      child: Text(
-                        'Delivery 20 Min',
-                        style: TextStyle(
-                          color: textWhite,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 15),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.star, color: textWhite, size: 18),
-                      SizedBox(width: 5),
-                      Text(
-                        '4.5',
-                        style: TextStyle(
-                          color: textWhite,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(width: 5),
-                      Text(
-                        '(2591)',
-                        style: TextStyle(
-                          color: textWhite,
-                          fontSize: 15,
-                        ),
-                      )
-                    ],
-                  )
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+  
 
   Widget getBody() {
     var size = MediaQuery.of(context).size;
