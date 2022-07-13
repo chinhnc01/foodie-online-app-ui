@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:foodie_app_ui/pages/login/login_page.dart';
+import 'package:flutter/material.dart'; 
+import 'package:foodie_app_ui/pages/splash/splash_page.dart';
 
 import 'router.dart' as router;
 
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: router.generateRoute,
-      home: LoginPage(),
+      home: SplashPage(),
     );
   }
 }
