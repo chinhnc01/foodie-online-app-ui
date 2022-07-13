@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:foodie_app_ui/theme/colors.dart';
 
 class TextFieldContainer extends StatelessWidget {
-  const TextFieldContainer(
-      {Key? key, required this.title, required this.hintText})
-      : super(key: key);
+  const TextFieldContainer({
+    Key? key,
+    required this.title,
+    required this.hintText,
+  }) : super(key: key);
 
   final String title, hintText;
 

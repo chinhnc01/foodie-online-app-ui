@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:foodie_app_ui/pages/account/account_page.dart';
 import 'package:foodie_app_ui/pages/profile/components/profile_item.dart';
+import 'package:foodie_app_ui/pages/wishlists/wishlists_page.dart';
 import 'package:foodie_app_ui/theme/colors.dart';
 import 'package:foodie_app_ui/theme/fontsizes.dart';
 import 'package:foodie_app_ui/theme/helper.dart';
@@ -57,7 +59,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         builder: (context) => AccountPage(),
                       ),
                     );
-                  }, 
+                  },
                   child: Text(
                     'View Account',
                     style: TextStyle(
@@ -71,10 +73,21 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
           ),
         ),
-        ProfileItem(icon: 'heart_icon.svg', name: 'Wishlists'),
-        ProfileItem(icon: 'help_icon.svg', name: 'Help'),
-        ProfileItem(icon: 'about_icon.svg', name: 'About'),
-        ProfileItem(icon: 'logout_icon.svg', name: 'Sign out'),
+        ProfileItem(
+          icon: 'heart_icon.svg',
+          name: 'Wishlists',
+          press: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Wishlists(),
+              ),
+            );
+          },
+        ),
+        ProfileItem(icon: 'help_icon.svg', name: 'Help', press: () {}),
+        ProfileItem(icon: 'about_icon.svg', name: 'About', press: () {}),
+        ProfileItem(icon: 'logout_icon.svg', name: 'Sign out', press: () {}),
       ],
     );
   }

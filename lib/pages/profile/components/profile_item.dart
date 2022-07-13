@@ -8,26 +8,31 @@ class ProfileItem extends StatelessWidget {
     Key? key,
     required this.icon,
     required this.name,
+    required this.press,
   }) : super(key: key);
 
   final String icon, name;
+  final VoidCallback press;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(mainPadding),
-      child: Row(
-        children: [
-          getSvgIcon(icon),
-          SizedBox(width: 20),
-          Text(
-            name,
-            style: TextStyle(
-              color: grey,
-              fontSize: 16,
-            ),
-          )
-        ],
+    return InkWell(
+      onTap: press,
+      child: Padding(
+        padding: const EdgeInsets.all(mainPadding),
+        child: Row(
+          children: [
+            getSvgIcon(icon),
+            SizedBox(width: 20),
+            Text(
+              name,
+              style: TextStyle(
+                color: grey,
+                fontSize: 16,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
