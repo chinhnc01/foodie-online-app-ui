@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:foodie_app_ui/pages/home/home_page.dart';
+import 'package:foodie_app_ui/pages/notification/notification_page.dart';
 import 'package:foodie_app_ui/pages/profile/profile_page.dart';
 import 'package:foodie_app_ui/theme/colors.dart';
 
@@ -32,12 +33,7 @@ class _RootAppState extends State<RootApp> {
             style: TextStyle(fontSize: 20),
           ),
         ),
-        Center(
-          child: Text(
-            'Noti',
-            style: TextStyle(fontSize: 20),
-          ),
-        ),
+        NotificationPage(),
         ProfilePage(),
       ],
     );

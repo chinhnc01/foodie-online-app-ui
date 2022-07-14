@@ -55,12 +55,22 @@ class _BodyState extends State<Body> {
                   Align(
                     alignment: Alignment.centerRight,
                     child: Container(
-                      child: Text(
-                        "Skip",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                          color: grey.withOpacity(0.7),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LoginPage(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          "Skip",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: grey.withOpacity(0.7),
+                          ),
                         ),
                       ),
                     ),
