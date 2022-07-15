@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:foodie_app_ui/theme/colors.dart';
-import 'package:foodie_app_ui/theme/helper.dart';
 import 'package:foodie_app_ui/theme/padding.dart';
 
 import 'restaurant_detail_item.dart';
 
 class Body extends StatelessWidget {
-  const Body({required this.restaurantName, Key? key}) : super(key: key);
+  const Body({
+    required this.restaurantName,
+    Key? key,
+  }) : super(key: key);
 
   final String restaurantName;
 
