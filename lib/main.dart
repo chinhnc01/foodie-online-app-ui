@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart'; 
+import 'package:flutter/material.dart';
 import 'package:foodie_app_ui/pages/splash/splash_page.dart';
+import 'package:foodie_app_ui/theme/colors.dart';
 
 import 'router.dart' as router;
 
@@ -17,6 +18,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       onGenerateRoute: router.generateRoute,
       home: SplashPage(),
+      theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          backgroundColor: textWhite,
+          elevation: 0.5
+        ),
+      ),
     );
   }
 }

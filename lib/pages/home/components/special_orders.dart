@@ -6,7 +6,6 @@ import 'package:foodie_app_ui/theme/fontsizes.dart';
 import 'package:foodie_app_ui/theme/padding.dart';
 import 'package:foodie_app_ui/widgets/store_card.dart';
 
-
 class SpecicalOffers extends StatelessWidget {
   const SpecicalOffers({
     Key? key,
@@ -63,6 +62,7 @@ class SpecicalOffers extends StatelessWidget {
                                 builder: (context) => StoreDetailPage(
                                   image: store['image'],
                                   name: store['name'],
+                                  delivery: store['delivery_time'],
                                 ),
                               ),
                             );
@@ -86,6 +86,7 @@ class SpecicalOffers extends StatelessWidget {
                               builder: (context) => StoreDetailPage(
                                 image: store['image'],
                                 name: store['name'],
+                                delivery: store['delivery_time'],
                               ),
                             ),
                           );

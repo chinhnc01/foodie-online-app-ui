@@ -5,6 +5,8 @@ import 'package:foodie_app_ui/pages/notification/notification_page.dart';
 import 'package:foodie_app_ui/pages/profile/profile_page.dart';
 import 'package:foodie_app_ui/theme/colors.dart';
 
+import 'orders/orders_page.dart';
+
 class RootApp extends StatefulWidget {
   const RootApp({Key? key}) : super(key: key);
 
@@ -27,12 +29,7 @@ class _RootAppState extends State<RootApp> {
       index: pageIndex,
       children: [
         HomePage(),
-        Center(
-          child: Text(
-            'Orders',
-            style: TextStyle(fontSize: 20),
-          ),
-        ),
+        OrdersPage(),
         NotificationPage(),
         ProfilePage(),
       ],

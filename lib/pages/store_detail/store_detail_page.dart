@@ -4,15 +4,17 @@ import 'package:foodie_app_ui/pages/store_detail/components/custom_app_bar.dart'
 import 'package:foodie_app_ui/theme/colors.dart';
 import 'package:foodie_app_ui/theme/padding.dart';
 
+import 'components/menu_item.dart';
 
 class StoreDetailPage extends StatefulWidget {
   const StoreDetailPage({
     Key? key,
     required this.name,
     required this.image,
+    required this.delivery,
   }) : super(key: key);
 
-  final String name, image;
+  final String name, image, delivery;
 
   @override
   State<StoreDetailPage> createState() => _StoreDetailPageState();
@@ -24,17 +26,20 @@ class _StoreDetailPageState extends State<StoreDetailPage> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(200),
-        child: CustomAppBar(image: widget.image, name: widget.name),
+        child: CustomAppBar(
+          image: widget.image,
+          name: widget.name,
+          delivery: widget.delivery,
+        ),
       ),
       body: getBody(),
       bottomNavigationBar: getFooter(),
     );
   }
 
-  
-
   Widget getBody() {
     var size = MediaQuery.of(context).size;
+
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.all(mainPadding),
@@ -64,78 +69,7 @@ class _StoreDetailPageState extends State<StoreDetailPage> {
             SizedBox(height: 40),
             Column(
               children: List.generate(productItems.length, (index) {
-                return Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 20),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            width: (size.width * 0.75) - 40,
-                            height: 80,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  productItems[index]['name'],
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                Row(
-                                  children: [
-                                    Text(
-                                      productItems[index]['price'],
-                                      style: TextStyle(
-                                        color: textBlack,
-                                        fontSize: 16,
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      width: 8,
-                                    ),
-                                    Text(
-                                      productItems[index]['discount'],
-                                      style: TextStyle(
-                                        decoration: TextDecoration.lineThrough,
-                                        color: textBlack,
-                                        fontSize: 16,
-                                      ),
-                                    )
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          Container(
-                            width: 80,
-                            height: 80,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
-                              image: DecorationImage(
-                                  image: NetworkImage(
-                                    productItems[index]['image'],
-                                  ),
-                                  fit: BoxFit.cover),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                    Divider(
-                      thickness: 0.8,
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                  ],
-                );
+                return MenuItem(size: size, index: index);
               }),
             )
           ],

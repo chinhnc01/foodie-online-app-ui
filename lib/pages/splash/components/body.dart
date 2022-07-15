@@ -79,7 +79,7 @@ class _BodyState extends State<Body> {
               ),
               SizedBox(height: 5),
               Expanded(
-                flex: 4,
+                flex: 5,
                 child: PageView.builder(
                   controller: _controller,
                   onPageChanged: (value) {
@@ -138,8 +138,8 @@ class _BodyState extends State<Body> {
   Container buildDot({int? index}) {
     return Container(
       margin: EdgeInsets.only(right: 5),
-      height: 12,
-      width: 12,
+      height: 10,
+      width: 10,
       decoration: BoxDecoration(
         color: currentPage == index ? primary : grey.withOpacity(0.3),
         shape: BoxShape.circle,

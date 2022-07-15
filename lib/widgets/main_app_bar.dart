@@ -1,6 +1,7 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:foodie_app_ui/pages/cart/cart_page.dart';
 import 'package:foodie_app_ui/theme/colors.dart';
 import 'package:foodie_app_ui/theme/fontsizes.dart';
 import 'package:foodie_app_ui/theme/helper.dart';
@@ -22,8 +23,10 @@ class MainAppBar extends StatelessWidget {
         excludeHeaderSemantics: true,
         flexibleSpace: SafeArea(
           child: Container(
-            padding:
-                EdgeInsets.only(left: leftMainPadding, right: rightMainPadding),
+            padding: EdgeInsets.only(
+              left: leftMainPadding,
+              right: rightMainPadding,
+            ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,7 +57,12 @@ class MainAppBar extends StatelessWidget {
                         ),
                         IconButton(
                             onPressed: () {
-                              Navigator.pushNamed(context, "/checkout");
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Cart(),
+                                ),
+                              );
                             },
                             icon: Badge(
                               badgeContent: Text(

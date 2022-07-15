@@ -60,6 +60,7 @@ class RecommendedDishes extends StatelessWidget {
                               builder: (context) => StoreDetailPage(
                                 image: dishes['image'],
                                 name: dishes['name'],
+                                delivery: dishes['delivery_time'],
                               ),
                             ),
                           );
@@ -80,6 +81,7 @@ class RecommendedDishes extends StatelessWidget {
                             builder: (context) => StoreDetailPage(
                               image: dishes['image'],
                               name: dishes['name'],
+                              delivery: dishes['delivery_time'],
                             ),
                           ),
                         );

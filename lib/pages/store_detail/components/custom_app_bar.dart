@@ -4,10 +4,14 @@ import 'package:foodie_app_ui/pages/restaurant_detail/restaurant_detail_page.dar
 import 'package:foodie_app_ui/theme/colors.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({Key? key, required this.name, required this.image})
-      : super(key: key);
+  const CustomAppBar({
+    Key? key,
+    required this.name,
+    required this.image,
+    required this.delivery,
+  }) : super(key: key);
 
-  final String name, image;
+  final String name, image, delivery;
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +83,7 @@ class CustomAppBar extends StatelessWidget {
                         top: 8,
                       ),
                       child: Text(
-                        'Delivery 20 Min',
+                        'Delivery '+ delivery.toString(),
                         style: TextStyle(
                           color: textWhite,
                         ),

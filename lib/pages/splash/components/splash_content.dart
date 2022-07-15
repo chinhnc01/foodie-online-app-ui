@@ -24,7 +24,7 @@ class SplashContent extends StatelessWidget {
             image,
           ),
         ),
-        SizedBox(height: 40),
+        SizedBox(height: 20),
         Text(
           text,
           style: TextStyle(
@@ -33,7 +33,7 @@ class SplashContent extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        SizedBox(height: 20),
+        SizedBox(height: 10),
         Text(
           subText,
           textAlign: TextAlign.center,
@@ -41,7 +41,7 @@ class SplashContent extends StatelessWidget {
             fontWeight: FontWeight.bold,
             fontSize: 16,
             color: grey.withOpacity(0.5),
-            height: 2,
+            height: 1.5,
             letterSpacing: 1,
           ),
         ),

@@ -9,20 +9,22 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return Padding(
-      padding: const EdgeInsets.only(top: topMainPadding),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: List.generate(
-          storeList.length,
-          (index) => Padding(
-            padding: const EdgeInsets.only(
-              bottom: bottomMainPadding,
-              left: leftMainPadding,
-            ),
-            child: StoreCard(
-              store: storeList[index],
-              width: size.width - mainPadding * 2,
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.only(top: topMainPadding),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: List.generate(
+            storeList.length,
+            (index) => Padding(
+              padding: const EdgeInsets.only(
+                bottom: bottomMainPadding,
+                left: leftMainPadding,
+              ),
+              child: StoreCard(
+                store: storeList[index],
+                width: size.width - mainPadding * 2,
+              ),
             ),
           ),
         ),
